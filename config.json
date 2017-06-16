@@ -1,0 +1,7 @@
+{
+  "syncOptions": {
+    "syncFrequency": 5,
+    "do_console_log": false
+  },
+  "persistent": false
+}
