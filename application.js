@@ -20,10 +20,6 @@ app.use('/mbaas', mbaasExpress.mbaas);
 // allow serving of static files from the public directory
 app.use(express.static(__dirname + '/public'));
 
-//Setting up the raincatcher workorders
-
-
-
 // Note: important that this is added just before your own Routes
 app.use(mbaasExpress.fhmiddleware());
 
@@ -33,7 +29,11 @@ app.use(mbaasExpress.errorHandler());
 var port = process.env.FH_PORT || process.env.OPENSHIFT_NODEJS_PORT || 8001;
 var host = process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
 
+//The $fh.sync module emits the `sync:ready` event when setup is complete.
+//See https://github.com/feedhenry/fh-sync#usage
 mbaasApi.events.on('sync:ready', function() {
+
+  //With Sync now ready, we can set up the raincatcher modules.
   require('./lib/setUpRaincatcher')().then(function() {
     app.listen(port, host, function() {
       console.log("App started at: " + new Date() + " on port: " + port);

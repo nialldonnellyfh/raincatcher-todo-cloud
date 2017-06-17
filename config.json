@@ -3,5 +3,7 @@
     "syncFrequency": 5,
     "do_console_log": false
   },
-  "persistent": false
+  "persistent": false,
+  "cloudDataPrefix": ":cloud:data",
+  "workordersEntityName": "workorders"
 }

@@ -1,25 +1,20 @@
-# FeedHenry Hello World MBaaS Server
+# Raincatcher TODO Cloud Application
 
-This is a blank 'hello world' FeedHenry MBaaS. Use it as a starting point for building your APIs. 
+This a simple cloud application that uses Raincatcher modules to Sync and Store TODO Objects.
 
-# Group Hello World API
+These objects are synchronised from the Raincatcher TODO Client App.
 
-# hello [/hello]
+## Setup
 
-'Hello world' endpoint.
+This Cloud App Requires [MongoDB](https://docs.mongodb.com/manual/installation/) run.
 
-## hello [POST] 
+In the `Gruntfile.js` file, the `env.local.FH_MONGODB_CONN_URL` is the URL that the raincatcher-sync module will connect to.
 
-'Hello world' endpoint.
+To start the application, run:
 
-+ Request (application/json)
-    + Body
-            {
-              "hello": "world"
-            }
+```bash
+npm install
+grunt serve:local
+```
 
-+ Response 200 (application/json)
-    + Body
-            {
-              "msg": "Hello world"
-            }
+
