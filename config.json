@@ -4,6 +4,8 @@
     "do_console_log": false
   },
   "persistent": false,
+  "wfmPrefix": "wfm",
+  "wfmCloudPrefix": "wfm:cloud",
   "cloudDataPrefix": ":cloud:data",
   "workordersEntityName": "workorders"
 }
